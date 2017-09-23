@@ -17,7 +17,7 @@ Installed:
 * i3status + i3bar
 * i3-style
 
-Really basic beginner rice. Nothing too complex, but simplistic enough for me to get into ricing. I also implemented `feh` to style up my background.
+Really basic beginner rice. Nothing too complex, but simplistic enough for me to get into ricing. 
 
 For i3-style, I am utilizing the Solarized theme to match up with my `zsh` config.
 
@@ -32,3 +32,11 @@ I find polybar super cool. My dotfile currently utilizes the `space` [theme](htt
 ## ranger
 
 No configs yet, coming soon!
+
+## Miscellaneous
+
+* feh - _used to change background_
+* xbacklight - _used with `bindsym` to change backlight with keyboard_
+* pulseaudio - _`pulseaudio` with `bindsym` provides fluid audio control
+* 
+

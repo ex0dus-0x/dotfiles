@@ -173,8 +173,12 @@ bindsym $mod+Control+l exec i3lock
 # gaps stuffs
 gaps inner 10
 gaps outer 10
+for_window [class="^.*"] border pixel 0
 
-# here are some scripts to change gaps
+# Shutdown NOW bindings
+bindsym $mod+Control+s exec sudo shutdown now
+
+# Here are some scripts to change gaps
 
 bindsym $mod+F11 exec i3-msg gaps inner current minus 5
 bindsym $mod+F12 exec i3-msg gaps inner current plus 5
@@ -194,14 +198,17 @@ client.focused_inactive #1d2021 #1d2021 #928374 #282828
 client.unfocused #32302f #32302f #928374 #282828
 client.urgent #cc241d #cc241d #ebdbb2 #282828
 
-# Execute polybar bash script
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+# To fix issue with Fn+F5/F6: https://askubuntu.com/questions/594068/fnf5-f6-keys-to-adjust-brightness-doesnt-work
+
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+# bindsym XF86MonBrightnessDown exec xbacklight -inc 5 # decrease screen brightness
+
