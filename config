@@ -151,18 +151,18 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-  status_command i3blocks	
-  colors {
-    separator #928374
-    background #282828
-    statusline #ebdbb2
-    focused_workspace #689d6a #689d6a #282828
-    active_workspace #1d2021 #1d2021 #928374
-    inactive_workspace #32302f #32302f #928374
-    urgent_workspace #cc241d #cc241d #ebdbb2
-  }
-}
+#bar {
+#  status_command i3blocks	
+#  colors {
+#    separator #928374
+#    background #282828
+#    statusline #ebdbb2
+#    focused_workspace #689d6a #689d6a #282828
+#    active_workspace #1d2021 #1d2021 #928374
+#    inactive_workspace #32302f #32302f #928374
+#    urgent_workspace #cc241d #cc241d #ebdbb2
+#  }
+#}
 
 
 ##### Custom bindsyms #####
@@ -171,7 +171,7 @@ bindsym $mod+Control+l exec i3lock
 # gaps stuffs
 gaps inner 8
 gaps outer 8
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 
 # Disable titlebar
 new_window pixel 1
@@ -189,6 +189,9 @@ bindsym $mod+F10 exec i3-msg gaps outer current plus 5
 
 # Execute feh to set wallpaper
 exec feh --bg-scale $HOME/Pictures/Wallpapers/1.jpg
+
+# Execute polybar on startup
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Set borderless windows
 new_window 1pixel
