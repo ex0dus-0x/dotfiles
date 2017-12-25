@@ -7,7 +7,7 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="cloud"
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -87,9 +87,10 @@ source $ZSH/oh-my-zsh.sh
 # Bash Aliases
 alias gpom='git push origin master'
 alias gp='git pull'
-alias bsc='git add .; git commit -a -m "Bull Shit Commit"; git push origin master' 
 alias gph='git push origin master; git push heroku master'
 alias cr='cargo clean && cargo run'
+alias nano='vim'
+
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -98,6 +99,10 @@ source /etc/bash_completion.d/climate_completion
 
 export PATH=/opt/swift/usr/bin:"${PATH}"
 
-export GOPATH=/usr/local/gopath
-
 export PATH=/root/.local/bin:"${PATH}"
+
+export TERM="xterm-256color"
+
+source "/root/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+
+export GOPATH=/root/Code/Go
