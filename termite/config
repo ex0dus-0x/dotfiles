@@ -1,0 +1,47 @@
+[options]
+browser = firefox
+clickable_url = true
+font = SpaceMono Nerd Font 13
+
+[colors]
+#http://terminal.sexy/#DxEYxMbSGRslIiQvMTRER0thY2iEh4uksbTE4eLo91fZ4Vcp12NH53nQNMV2SIlgW6Gn84h0
+
+# special
+foreground      = #c4c6d2
+foreground_bold = #c4c6d2
+cursor          = #c4c6d2
+background      = #0f1118
+background 	= rgba(15,17,24, 0.8) 
+
+# black
+color0  = #191b25
+color8  = #f757d9
+
+# red
+color1  = #22242f
+color9  = #e15729
+
+# green
+color2  = #313444
+color10 = #d76347
+
+# yellow
+color3  = #474b61
+color11 = #e779d0
+
+# blue
+color4  = #636884
+color12 = #34c576
+
+# magenta
+color5  = #878ba4
+color13 = #488960
+
+# cyan
+color6  = #b1b4c4
+color14 = #5ba1a7
+
+# white
+color7  = #e1e2e8
+color15 = #f38874
+
