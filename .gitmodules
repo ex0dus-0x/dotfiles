@@ -1,0 +1,7 @@
+[submodule "Vundle"]
+    path = vim/.vim/bundle
+    url = git://github.com/VundleVim/Vundle.vim.git
+
+[submodule "tmux-themepack"]
+    path = tmux/
+    url = git://github.com/jimeh/tmux-themepack.git

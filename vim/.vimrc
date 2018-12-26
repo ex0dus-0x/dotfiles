@@ -1,23 +1,49 @@
-execute pathogen#infect()
+set nocompatible
+filetype off
 syntax on
+
+"===============================
+" # Plugins 
+"==============================
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'srcery-colors/srcery-vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+
+call vundle#end()
+filetype plugin indent on
 
 "===============================
 " # Custom configs
 "==============================
-
-set tabstop=4
-set shiftwidth=4
 set expandtab
-set clipboard=unnamedplus
+set number
+
 set laststatus=2
 set t_Co=256
+set tabstop=4
+set shiftwidth=4
+set clipboard=unnamedplus
 
+" define lightline colorscheme
+let g:lightline = { 'colorscheme': 'srcery' }
+
+" define colorscheme for vim
+colorscheme srcery
+
+" mappings for various plugins
 map <C-a> :NERDTreeToggle<CR>
+map <C-f> :Files<CR>
 
 "===============================
 " # OPAM related stuff
 "===============================
-
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
