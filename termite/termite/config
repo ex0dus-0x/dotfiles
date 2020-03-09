@@ -1,0 +1,45 @@
+[options]
+browser = firefox
+clickable_url = true
+font = Fantasque Sans Mono 16
+
+[colors]
+
+# special
+foreground      = #d0d1d7
+foreground_bold = #d0d1d7
+cursor          = #d0d1d7
+background      = rgba(10, 11, 14, 0.4)
+
+# black
+color0  = #121318
+color8  = #f0bdb8
+
+# red
+color1  = #1b1c22
+color9  = #43cad2
+
+# green
+color2  = #2c2d36
+color10 = #5ad589
+
+# yellow
+color3  = #434551
+color11 = #f9beb7
+
+# blue
+color4  = #606372
+color12 = #1dd074
+
+# magenta
+color5  = #848797
+color13 = #1fbe6a
+
+# cyan
+color6  = #b0b2bc
+color14 = #f19284
+
+# white
+color7  = #e1e2e6
+color15 = #56cc83
+

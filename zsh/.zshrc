@@ -1,12 +1,14 @@
-if [ "$TMUX" = "" ]; then tmux; fi
-
 # Path to your oh-my-zsh installation.
-export ZSH=/home/ex0dus/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
+export SHELL=/bin/zsh
+
+# Locale
+export LC_ALL=en_US.UTF-8
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="lambda-mod"
+ZSH_THEME="steeef"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -59,6 +61,7 @@ ZSH_THEME="lambda-mod"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -67,11 +70,7 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+export EDITOR='vim'
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
@@ -81,19 +80,12 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Custom aliases
 alias gpom="git push origin master"
-alias fbc="sudo fb-messenger-cli"
+alias ls="exa"
 
 # Custom exports
-export GEM_HOME=$HOME/.gem
-export GOPATH=$HOME/go
 
 export PATH=$PATH:$HOME/.local/bin
-export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
-export PATH=/opt/flutter/bin:$PATH
-
-# OPAM configuration
-. /home/ex0dus/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # Added by Krypton
 export GPG_TTY=$(tty)
