@@ -17,7 +17,7 @@ set $mod Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Noto Sans 9
+font pango:Fantasque Sans Mono 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -38,7 +38,7 @@ bindsym $mod+Shift+q kill
 # Use rofi as a dmenu replacement
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 #bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 254 -disable-history -font "RobotoMono 18"
-bindsym $mod+d exec rofi -show drun -padding 20 -font "SpaceMono Nerd Font 12"
+bindsym $mod+d exec rofi -show run -padding 20 -font "SpaceMono Nerd Font 12"
 
 # change focus
 bindsym $mod+j focus left
@@ -157,9 +157,9 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+d exec --no-startup-id $HOME/.config/scripts/lock
 
 # gaps stuffs
-gaps inner 8
-gaps outer 6
-for_window [class="^.*"] border pixel 0
+gaps inner 20
+gaps outer 10
+for_window [class="^.*"] border pixel 1
 
 # Disable titlebar
 new_window pixel 1
@@ -176,10 +176,10 @@ bindsym $mod+F9 exec i3-msg gaps outer current minus 5
 bindsym $mod+F10 exec i3-msg gaps outer current plus 5
 
 # Execute feh to set wallpaper
-exec feh --bg-scale $HOME/.config/img/1.jpg
+exec feh --bg-scale $HOME/.config/img/wallpaper.jpg
 
-# Execute compton
-exec --no-startup-id compton -b --backend glx --vsync opengl-swc --unredir-if-possible-exclude "name*='Firefox'" &
+# Execute picom
+exec --no-startup-id picom --corner-radius 12 &
 
 # Execute dunst 
 exec --no-startup-id dunst &
@@ -188,7 +188,7 @@ exec --no-startup-id dunst &
 exec --no-startup-id nm-applet &
 
 # Start polybar
-exec_always --no-startup-id polybar bar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Use f.lux with gaps
 exec --no-startup-id xflux -k 1700 -nofork
@@ -203,8 +203,5 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 
 # Sreen brightness controls
 # To fix issue with Fn+F5/F6: https://askubuntu.com/questions/594068/fnf5-f6-keys-to-adjust-brightness-doesnt-work
-
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
-
-
