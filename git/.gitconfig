@@ -1,0 +1,9 @@
+[user]
+	email = ex0dus@codemuch.tech
+	name = ex0dus-0x
+[gpg]
+	program = /usr/bin/krgpg
+[commit]
+	gpgSign = true
+[tag]
+	forceSignAnnotated = true

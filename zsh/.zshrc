@@ -10,13 +10,6 @@ export LC_ALL=en_US.UTF-8
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="steeef"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -62,6 +55,7 @@ ZSH_THEME="steeef"
 plugins=(
   git
   zsh-autosuggestions
+  archlinux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -78,14 +72,37 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Custom aliases
-alias gpom="git push origin master"
-alias ls="exa"
-
-# Custom exports
-
-export PATH=$PATH:$HOME/.local/bin
-export PATH="$PATH:$GOPATH/bin"
-
 # Added by Krypton
 export GPG_TTY=$(tty)
+
+
+################
+# Custom aliases
+################
+
+# git
+alias gpom="git push origin master"
+alias gph="git push origin HEAD"
+alias grv="git remote -v"
+alias gf="git fetch"
+
+# docker
+alias dcu="docker-compose up"
+alias dcp="docker container prune"
+alias dil="docker images list"
+
+# other cli
+alias e="vim"
+alias ls="exa"
+alias cat="bat"
+
+#####################
+# Custom PATH exports
+#####################
+
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
+export PATH="$PATH:$GOPATH/bin"
+
+export DOT=$HOME/dotfiles

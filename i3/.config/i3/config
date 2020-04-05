@@ -38,7 +38,7 @@ bindsym $mod+Shift+q kill
 # Use rofi as a dmenu replacement
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 #bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 254 -disable-history -font "RobotoMono 18"
-bindsym $mod+d exec rofi -show run -padding 20 -font "SpaceMono Nerd Font 12"
+bindsym $mod+d exec rofi -show run -padding 20 -font "Fantasque Sans Mono 12"
 
 # change focus
 bindsym $mod+j focus left
