@@ -117,7 +117,6 @@ bindsym $mod+Shift+0 move container to workspace 10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
@@ -150,30 +149,41 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-##### Custom bindsyms #####
 
-# Lock it up!
-#bindsym $mod+Control+l exec i3lock
-bindsym $mod+Shift+d exec --no-startup-id $HOME/.config/scripts/lock
+#############################
+# CUSTOM CONFIGURATIONS
+#  - wm settings
+#  - startup processes
+#  - bindsyms
+#############################
 
-# gaps stuffs
-gaps inner 20
-gaps outer 10
+# wm colors
+set $background #1a1a1a
+set $foreground #ffffff
+set $unfocused  #4a4a4a
+set $focused    #bcecff
+set $urgent     #ffdb9e
+
+# Class                 Border      Background  Text        Indicator   Child indicator
+client.focused          $focused    $focused    $background $focused    $focused
+client.focused_inactive $unfocused  $unfocused  $foreground $unfocused  $unfocused
+client.unfocused        $unfocused  $unfocused  $foreground $unfocused  $unfocused
+client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
+
+# gaps for windows
+gaps inner 16
+gaps outer -16
+gaps bottom -6
+smart_gaps inverse_outer
+
+# 1-pixel borders for all windows
 for_window [class="^.*"] border pixel 1
 
 # Disable titlebar
 new_window pixel 1
 new_float pixel 1
 
-# Shutdown NOW bindings
-bindsym $mod+Control+s exec systemctl poweroff
-
-# Here are some scripts to change gaps
-
-bindsym $mod+F11 exec i3-msg gaps inner current minus 5
-bindsym $mod+F12 exec i3-msg gaps inner current plus 5
-bindsym $mod+F9 exec i3-msg gaps outer current minus 5
-bindsym $mod+F10 exec i3-msg gaps outer current plus 5
+####################################################################
 
 # Execute feh to set wallpaper
 exec feh --bg-scale $HOME/.config/img/wallpaper.jpg
@@ -193,15 +203,26 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Use f.lux with gaps
 exec --no-startup-id xflux -k 1700 -nofork
 
-# Set borderless windows
-new_window 1pixel
+
+####################################################################
+
+# Lock it up!
+bindsym $mod+Shift+d exec --no-startup-id $HOME/.config/scripts/lock
+
+# gaps bindsyms to change
+bindsym $mod+F11                exec i3-msg gaps inner current minus 5
+bindsym $mod+F12                exec i3-msg gaps inner current plus 5
+bindsym $mod+F9                 exec i3-msg gaps outer current minus 5
+bindsym $mod+F10                exec i3-msg gaps outer current plus 5
+
+# Shutdown NOW bindings
+bindsym $mod+Control+s          exec systemctl poweroff
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume    exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume    exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute           exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-# Sreen brightness controls
-# To fix issue with Fn+F5/F6: https://askubuntu.com/questions/594068/fnf5-f6-keys-to-adjust-brightness-doesnt-work
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+# Screen brightness controls
+bindsym XF86MonBrightnessUp     exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown   exec xbacklight -dec 5 # decrease screen brightness
