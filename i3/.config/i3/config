@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -17,7 +17,7 @@ set $mod Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Fantasque Sans Mono 10
+font pango:Fantasque Sans Mono 24
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -30,15 +30,14 @@ font pango:Fantasque Sans Mono 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec termite -e "$SHELL -c tmux"
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # Use rofi as a dmenu replacement
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-#bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 254 -disable-history -font "RobotoMono 18"
-bindsym $mod+d exec rofi -show run -padding 20 -font "Fantasque Sans Mono 12"
+bindsym $mod+d exec --no-startup-id rofi -show run
 
 # change focus
 bindsym $mod+j focus left
@@ -197,12 +196,11 @@ exec --no-startup-id dunst &
 # Start network manager applet
 exec --no-startup-id nm-applet &
 
+# Start redshift
+exec --no-startup-id redshift &
+
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# Use f.lux with gaps
-exec --no-startup-id xflux -k 1700 -nofork
-
 
 ####################################################################
 

@@ -1,5 +1,5 @@
 [options]
-font = Fantasque Sans Mono 18
+font = Fantasque Sans Mono 24
 allow_bold = true
 #audible_bell = false
 bold_is_bright = true

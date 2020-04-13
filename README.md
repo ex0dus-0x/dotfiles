@@ -1,9 +1,9 @@
 <div align="center">
-    <h1>dotfiles</h1>
-    <blockquote>
-        <p>personal dotfiles for Arch Linux</p>
-    </blockquote>
+    <h1>dotfiles</h1><br>
+    <p>personal dotfiles for Arch Linux</p>
 </div>
+
+> This is still a very much WIP!
 
 ## build
 
@@ -14,12 +14,20 @@ $ sudo pacman -S stow
 ```
 
 Run the `./setup.sh` script, which will install all configurations for the current
-local user.
+local user. Any changes and modifications made to the symlinks, will reflect across in the Git repository.
 
 ## rice specs
 
+* __linux distro__: Arch Linux
+* __shell__: zsh
 * __window manager__: i3-gaps
+* __terminal emulator__: termite
+* __text editor__: vim
 * __notification daemon__: dunst
+* __bar__: polybar
+* __app launcher__: rofi
+* __background manager__: feh
+
 
 ## top-level view 
 
@@ -84,3 +92,7 @@ local user.
     └── .zshrc
 ```
 
+
+## license
+
+[mit license](https://codemuch.tech/license.txt)
