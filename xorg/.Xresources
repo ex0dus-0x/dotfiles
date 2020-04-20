@@ -1,52 +1,38 @@
-URxvt.scrollBar:              false
-URxvt.font:			              xft:mononoki:regular:size=16
-URxvt.internalBorder:		      15
-
-URxvt.perl-ext-common:        default,matcher,resize-font,url-select,keyboard-select
-
-URxvt.url-select-launcher:    firefox
-URxvt.url-select-underline:   true
-URxvt.colorUL:                #80d3f9
-
-URxvt.keysym.M-u:             perl:url-select:select_next
-URxvt.keysym.M-o:             perl:keyboard-select:activate
-
-! Color Scheme !
+! | COLOR SCHEME |
 
 ! special
-*.foreground:   #eceff1
-*.background:   #31313a
-*.cursorColor:  #eceff1
+*.foreground:   #d7e3d8
+*.background:   #020202
+*.cursorColor:  #d7e3d8
 
 ! black
-*.color0:       #263238
-*.color8:       #919191
+*.color0:       #030403
+*.color8:       #dea3da
 
 ! red
-*.color1:       #ff9800
-*.color9:       #ED973F
+*.color1:       #121312
+*.color9:       #98acd2
 
 ! green
-*.color2:       #8bc34a
-*.color10:      #9ccc65
+*.color2:       #232523
+*.color10:      #69b5b4
 
 ! yellow
-*.color3:       #ffc107
-*.color11:      #ffa000
+*.color3:       #3a3e3b
+*.color11:      #81c8c7
 
 ! blue
-*.color4:       #03a9f4
-*.color12:      #81d4fa
+*.color4:       #595e59
+*.color12:      #ab9d74
 
 ! magenta
-*.color5:       #FF5A92
-*.color13:      #EF5B9C
+*.color5:       #7d857e
+*.color13:      #7cb682
 
 ! cyan
-*.color6:       #009688
-*.color14:      #26a69a
+*.color6:       #a8b2a9
+*.color14:      #de7d7f
 
 ! white
-*.color7:       #cfd8dc
-*.color15:      #eceff1
-
+*.color7:       #dbe5dc
+*.color15:      #71d07d

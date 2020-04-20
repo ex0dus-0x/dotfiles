@@ -76,15 +76,22 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 export GPG_TTY=$(tty)
 
 
-################
-# Custom aliases
-################
+############################
+# Custom aliases and helpers
+############################
 
 # git
+
+ggr() {
+    git grep -l $1 | xargs sed -i "s/$1/$2/g"
+}
+
 alias gpom="git push origin master"
 alias gph="git push origin HEAD"
 alias grv="git remote -v"
 alias gf="git fetch"
+alias gch="git checkout HEAD~1"
+
 
 # docker
 alias dcu="docker-compose up"

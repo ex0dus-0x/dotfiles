@@ -170,9 +170,8 @@ client.unfocused        $unfocused  $unfocused  $foreground $unfocused  $unfocus
 client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
 
 # gaps for windows
-gaps inner 16
-gaps outer -16
-gaps bottom -6
+gaps inner 60
+gaps outer 30
 smart_gaps inverse_outer
 
 # 1-pixel borders for all windows
@@ -184,23 +183,14 @@ new_float pixel 1
 
 ####################################################################
 
-# Execute feh to set wallpaper
-exec feh --bg-scale $HOME/.config/img/wallpaper.jpg
-
-# Execute picom
-exec --no-startup-id picom --corner-radius 12 &
-
-# Execute dunst 
+exec --no-startup-id feh --bg-scale $HOME/.config/img/wallpaper.jpg
+exec --no-startup-id picom --corner-radius 12 --config $HOME/.config/picom.conf
 exec --no-startup-id dunst &
-
-# Start network manager applet
 exec --no-startup-id nm-applet &
-
-# Start redshift
 exec --no-startup-id redshift &
-
-# Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+exec --no-startup-id ~/.config/scripts/blurme &
 
 ####################################################################
 

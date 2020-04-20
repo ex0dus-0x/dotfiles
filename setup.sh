@@ -24,6 +24,7 @@ useronly=(
     rofi
     polybar
     picom
+    tmux
     scripts
 )
 

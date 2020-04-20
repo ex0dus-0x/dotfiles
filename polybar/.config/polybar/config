@@ -59,9 +59,9 @@ font-1 = Material Design Icons:pixelsize=13;3
 
 fixed-center = true
 
-modules-left = bspwm i3
+modules-left = i3
 modules-center = 
-modules-right = mpv cmus volume wlan battery time
+modules-right = volume wlan battery time
 
 tray-position = false
 ;tray-detached = false

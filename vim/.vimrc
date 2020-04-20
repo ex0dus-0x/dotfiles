@@ -66,3 +66,6 @@ let g:lightline = { 'colorscheme': 'srcery_drk' }
 " mappings for various plugins
 map <C-a> :NERDTreeToggle<CR>
 map <C-f> :Files<CR>
+
+" mapping to strip whitespcae after save
+autocmd BufWritePre * %s/\s\+$//e
