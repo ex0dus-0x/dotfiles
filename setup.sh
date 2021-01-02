@@ -14,6 +14,8 @@ git submodule update
 useronly=(
     bash
     zsh
+    i3
+    gtk-3.0
     xorg
     vim
     termite
