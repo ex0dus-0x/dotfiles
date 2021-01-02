@@ -12,24 +12,6 @@ filetype off
 filetype plugin indent on
 
 "===============================
-" # Plugins 
-"===============================
-
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-
-    Plugin 'VundleVim/Vundle.vim'
-    Plugin 'junegunn/goyo.vim'
-    Plugin 'itchyny/lightline.vim'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'zacanger/angr.vim'
-    Plugin 'junegunn/fzf'
-    Plugin 'junegunn/fzf.vim'
-
-call vundle#end()
-
-"===============================
 " # Custom configs
 "==============================
 
@@ -54,18 +36,33 @@ set textwidth=0
 " print last status line
 set laststatus=2
 
+"===============================
+" # Plugins
+"===============================
+
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+    Plugin 'VundleVim/Vundle.vim'
+    Plugin 'dikiaap/minimalist'
+    Plugin 'junegunn/goyo.vim'
+    Plugin 'itchyny/lightline.vim'
+    Plugin 'scrooloose/nerdtree'
+
+call vundle#end()
+
 " use 256 colors
 set t_Co=256
 
-" define colorscheme
-colorscheme angr
+" define colorscheme, override colors
+colorscheme minimalist
+highlight Normal ctermfg=NONE ctermbg=NONE
+highlight LineNr ctermfg=NONE ctermbg=NONE
 
 " define lightline colorscheme
 let g:lightline = { 'colorscheme': 'srcery_drk' }
 
 " mappings for various plugins
 map <C-a> :NERDTreeToggle<CR>
-map <C-f> :Files<CR>
-
-" mapping to strip whitespcae after save
-autocmd BufWritePre * %s/\s\+$//e
+map <C-e> :Goyo<Cr>

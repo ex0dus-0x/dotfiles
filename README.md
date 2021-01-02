@@ -3,8 +3,6 @@
     <p>personal dotfiles for Arch Linux</p>
 </div>
 
-> This is still a very much WIP!
-
 ## build
 
 Ensure you have `stow` installed:
@@ -20,7 +18,7 @@ local user. Any changes and modifications made to the symlinks, will reflect acr
 
 * __linux distro__: Arch Linux
 * __shell__: zsh
-* __window manager__: i3-gaps
+* __window manager__: i3-gaps-rounded
 * __terminal emulator__: termite
 * __text editor__: vim
 * __notification daemon__: dunst
@@ -29,7 +27,7 @@ local user. Any changes and modifications made to the symlinks, will reflect acr
 * __background manager__: feh
 
 
-## top-level view 
+## top-level view
 
 ```
 .
