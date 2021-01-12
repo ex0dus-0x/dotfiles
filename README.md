@@ -1,9 +1,26 @@
 <div align="center">
     <h1>dotfiles</h1><br>
-    <p>personal dotfiles for Arch Linux</p>
+    <p>Personal dotfiles for Arch Linux</p>
 </div>
 
-## build
+## Details
+
+| Component           | Application                                               |
+|---------------------|-----------------------------------------------------------|
+| Linux Distribution  | Arch Linux                                                |
+| Window Manager      | i3-gaps-rounded                                           |
+| Compositor          | picom                                                     |
+| Shell               | zsh (with oh-my-zsh)                                      |
+| Terminal            | termite                                                   |
+| Text Editor         | vim                                                       |
+| Text Editor Theme   | [jellybeans](https://github.com/nanotech/jellybeans.vim)  |
+| Lightline Theme     | [srcery_drk](https://github.com/srcery-colors/srcery-vim) |
+| Notification Daemon | dunst                                                     |
+| Bar                 | Polybar                                                   |
+| App Launcher        | rofi                                                      |
+| Wallpaper manager   | feh                                                       |
+
+## How To Build
 
 Ensure you have `stow` installed:
 
@@ -12,85 +29,4 @@ $ sudo pacman -S stow
 ```
 
 Run the `./setup.sh` script, which will install all configurations for the current
-local user. Any changes and modifications made to the symlinks, will reflect across in the Git repository.
-
-## rice specs
-
-* __linux distro__: Arch Linux
-* __shell__: zsh
-* __window manager__: i3-gaps-rounded
-* __terminal emulator__: termite
-* __text editor__: vim
-* __notification daemon__: dunst
-* __bar__: polybar
-* __app launcher__: rofi
-* __background manager__: feh
-
-
-## top-level view
-
-```
-.
-├── bash
-│   ├── .bash_profile
-│   └── .bashrc
-├── dunst
-│   └── .dunstrc
-├── feh
-│   └── .fehbg
-├── git
-│   └── .gitconfig
-├── .gitignore
-├── .gitmodules
-├── i3
-│   └── .config
-│       └── i3
-│           └── config
-├── img
-│   └── .config
-│       └── img
-│           ├── lock.png
-│           └── wallpaper.jpg
-├── neofetch
-│   └── .config
-│       └── neofetch
-│           └── config.conf
-├── picom
-│   └── .config
-│       ├── picom
-│       └── picom.conf
-├── polybar
-│   └── .config
-│       └── polybar
-│           ├── config
-│           └── launch.sh
-├── README.md
-├── rofi
-│   └── .config
-│       └── rofi
-│           └── config.rasi
-├── scripts
-│   └── .config
-│       └── scripts
-│           └── lock
-├── setup.sh
-├── termite
-│   └── .config
-│       └── termite
-│           └── config
-├── vim
-│   └── .vimrc
-├── xorg
-│   ├── .Xauthority
-│   ├── .xbindkeysrc
-│   ├── .xinitrc
-│   └── .Xresources
-└── zsh
-    ├── .zprofile
-    └── .zshrc
-```
-
-
-## license
-
-[mit license](https://codemuch.tech/license.txt)
+local user as symlinks. Any changes will reflect across both the local configuration and git repository.

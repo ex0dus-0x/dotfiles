@@ -45,20 +45,21 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
     Plugin 'VundleVim/Vundle.vim'
-    Plugin 'dikiaap/minimalist'
+    Plugin 'nanotech/jellybeans.vim'
     Plugin 'junegunn/goyo.vim'
     Plugin 'itchyny/lightline.vim'
     Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 
-" use 256 colors
-set t_Co=256
-
 " define colorscheme, override colors
-colorscheme minimalist
-highlight Normal ctermfg=NONE ctermbg=NONE
-highlight LineNr ctermfg=NONE ctermbg=NONE
+colorscheme jellybeans
+let g:jellybeans_overrides = {
+\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+\}
+if has('termguicolors') && &termguicolors
+    let g:jellybeans_overrides['background']['guibg'] = 'none'
+endif
 
 " define lightline colorscheme
 let g:lightline = { 'colorscheme': 'srcery_drk' }

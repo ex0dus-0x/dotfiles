@@ -2,7 +2,7 @@
 
 ! special
 *.foreground:   #d7e3d8
-*.background:   #020202
+*.background:   #151515
 *.cursorColor:  #d7e3d8
 
 ! black
