@@ -89,7 +89,6 @@ alias grv="git remote -v"
 alias gf="git fetch"
 alias gch="git checkout HEAD~1"
 
-
 # docker
 alias dcu="docker-compose up"
 alias dcp="docker container prune"
@@ -104,9 +103,17 @@ alias cat="bat"
 # Custom PATH exports
 #####################
 
+export GOPATH="$HOME/go"
+
+# AUR packages
+export PATH=$PATH:/opt/binaryninja
+export PATH=$PATH:/opt/depot_tools
+
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
 export PATH="$PATH:$GOPATH/bin"
 
 export DOT=$HOME/dotfiles
+
+eval "$(pyenv init -)"
